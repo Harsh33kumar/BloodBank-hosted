@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+.blood-samples-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.blood-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+  background: #fff;
+}
+
+.blood-table th,
+.blood-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.blood-table th {
+  background-color: #c62828;
+  color: white;
+}
+
+.blood-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.blood-table tr:hover {
+  background-color: #eeeeee;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .blood-table th,
+  .blood-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .blood-samples-container {
+    padding: 10px;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  .blood-table th,
+  .blood-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

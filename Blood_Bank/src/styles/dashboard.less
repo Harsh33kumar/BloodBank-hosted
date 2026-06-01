@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.receiver-dashboard {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f4f7fc;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  color: #d62828;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.blood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.blood-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.blood-card:hover {
+  transform: translateY(-5px);
+}
+
+.blood-group {
+  width: 80px;
+  height: 80px;
+  background: #d62828;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.hospital-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.quantity {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.request-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #d62828;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.request-btn:hover {
+  background: #b71c1c;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  grid-column: 1/-1;
+  padding: 50px;
+}
+
+@media (max-width: 768px) {
+  .receiver-dashboard {
+    padding: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .blood-grid {
+    grid-template-columns: 1fr;
+  }
+}

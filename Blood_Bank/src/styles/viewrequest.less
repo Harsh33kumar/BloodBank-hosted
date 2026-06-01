@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+.request-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.request-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #c62828;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+  background: #fff;
+}
+
+.request-table th,
+.request-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.request-table th {
+  background: #c62828;
+  color: white;
+}
+
+.request-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.request-table tr:hover {
+  background: #f1f1f1;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .request-container {
+    padding: 15px;
+  }
+
+  .request-title {
+    font-size: 1.5rem;
+  }
+
+  .request-table th,
+  .request-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .request-container {
+    padding: 10px;
+  }
+
+  .request-title {
+    font-size: 1.2rem;
+  }
+
+  .request-table th,
+  .request-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .status {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}

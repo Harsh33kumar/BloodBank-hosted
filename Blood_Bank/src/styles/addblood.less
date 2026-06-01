@@ -1,0 +1,99 @@
+.add-blood-container {
+  min-height: 100vh;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  .add-blood-card {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      text-align: center;
+      color: #d32f2f;
+      margin-bottom: 25px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      select,
+      input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #dcdcdc;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: 0.3s ease;
+
+        &:focus {
+          border-color: #d32f2f;
+          box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+        }
+      }
+
+      button {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #d32f2f;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+          background: #b71c1c;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-blood-container {
+    padding: 15px;
+
+    .add-blood-card {
+      padding: 20px;
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .add-blood-container {
+    .add-blood-card {
+      padding: 15px;
+
+      h2 {
+        font-size: 22px;
+      }
+
+      form {
+        select,
+        input,
+        button {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
