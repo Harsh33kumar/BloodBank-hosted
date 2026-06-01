@@ -8,7 +8,7 @@ import AddBlood from "./pages/AddBlood";
 import ViewRequest from "./pages/ViewRequest";
 import BloodSamples from "./pages/BloodSamples";
 import HospitalDashboard from "./pages/HospitalDashboard";
-import ReceiverDashboard from "./pages/ReceiverDashboard";
+import ReceiverDashboard from "./pages/receiverDashboard";
 import RequestBlood from "./pages/RequestBlood";
 import RequestStatus from "./pages/requestStatus";
 
