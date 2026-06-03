@@ -89,7 +89,7 @@ try {
 
 $stmt = $conn->prepare(
     "INSERT INTO hospitals
-    (hospital_name, email, password, address, phone, role)
+    (username, email, password, address, phone, role)
     VALUES (?, ?, ?, ?, ?, ?)"
 );
 
