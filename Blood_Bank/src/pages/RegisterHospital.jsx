@@ -41,7 +41,6 @@ function RegisterHospital() {
       // const result = await response.json();
       const text = await response.text();
 
-      console.log("Server Response:", text);
 
       const jsonStart = text.indexOf("{");
       const jsonText = text.substring(jsonStart);
@@ -55,6 +54,7 @@ function RegisterHospital() {
           hospitalName: "",
           email: "",
           password: "",
+          confirmPassword: "",
           address: "",
           phone: "",
         });

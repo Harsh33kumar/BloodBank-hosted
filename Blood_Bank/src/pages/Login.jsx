@@ -14,7 +14,6 @@ function Login() {
     const username = formData.get("username");
     const password = formData.get("password");
     const role = formData.get("role");
-console.log(formData);
     try {
       const response = await axios.post(
         `${host}/login.php`,
@@ -30,7 +29,7 @@ console.log(formData);
         }
       );
 
-      console.log(response.data);
+      // console.log(response.data);
 
       if (response.data.status) {
         alert("Login Successful");
@@ -44,9 +43,6 @@ console.log(formData);
         // redirect
         // window.location.href = "/dashboard";
         window.location.href = `/${response.data.user.role}dashboard`;
-
-                console.log("User data stored in localStorage:", response.data.user);
-        console.log("User role:", response.data.user.role);
 
       } else {
         alert(response.data.message);

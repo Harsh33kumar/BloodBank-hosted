@@ -23,14 +23,11 @@ function RequestStatus() {
 
   const fetchRequests = async () => {
     try {
-      const response = await axios.get(
-        `${host}/getHospitalRequests.php`,
-        {
-          params: {
-            hospital_name: user.username,
-          },
-        }
-      );
+      const response = await axios.get(`${host}/getHospitalRequests.php`, {
+        params: {
+          hospital_name: user.username,
+        },
+      });
 
       if (response.data.status) {
         setRequests(response.data.data);
@@ -45,13 +42,10 @@ function RequestStatus() {
 
   const updateStatus = async (requestId, status) => {
     try {
-      const response = await axios.post(
-        `${host}/updateRequestStatus.php`,
-        {
-          requestId,
-          status,
-        }
-      );
+      const response = await axios.post(`${host}/updateRequestStatus.php`, {
+        requestId,
+        status,
+      });
 
       if (response.data.status) {
         alert("Status Updated");
@@ -62,6 +56,32 @@ function RequestStatus() {
     } catch (error) {
       console.error(error);
       alert("Failed to update status");
+    }
+  };
+
+  const deleteRequest = async (requestId) => {
+  // console.log("Deleting ID:", requestId);
+
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this request?"
+  );
+
+    if (!confirmDelete) return;
+
+    try {
+      const response = await axios.post(`${host}/deleteRequest.php`, {
+        id: requestId,
+      });
+
+      if (response.data.status) {
+        alert("Request deleted successfully");
+        fetchRequests();
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Failed to delete request");
     }
   };
 
@@ -101,45 +121,36 @@ function RequestStatus() {
                 </td>
 
                 <td>
-                  {request.status === "Pending" && (
-                    <>
-                      <button
-                        onClick={() =>
-                          updateStatus(
-                            request.id,
-                            "Approved"
-                          )
-                        }
-                      >
-                        Approve
-                      </button>
-
-                      {" "}
-
-                      <button
-                        onClick={() =>
-                          updateStatus(
-                            request.id,
-                            "Rejected"
-                          )
-                        }
-                      >
-                        Reject
-                      </button>
-                    </>
-                  )}
-
-                  {request.status !== "Pending" && (
-                    <span>No Action</span>
-                  )}
+                  <button
+                    onClick={() => updateStatus(request.id, "Approved")}
+                    disabled={request.status === "Approved"}
+                  >
+                    Approve
+                  </button>{" "}
+                  <button
+                    onClick={() => updateStatus(request.id, "Rejected")}
+                    disabled={request.status === "Rejected"}
+                  >
+                    Reject
+                  </button>{" "}
+                  <button
+                    onClick={() => deleteRequest(request.id)}
+                    style={{
+                      backgroundColor: "red",
+                      color: "white",
+                      border: "none",
+                      padding: "5px 10px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="7">
-                No blood requests found
-              </td>
+              <td colSpan="7">No blood requests found</td>
             </tr>
           )}
         </tbody>

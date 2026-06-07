@@ -41,8 +41,6 @@ function RegisterReceiver() {
 
       const text = await response.text();
 
-      console.log("Server Response:", text);
-
       const jsonStart = text.indexOf("{");
 
       if (jsonStart === -1) {

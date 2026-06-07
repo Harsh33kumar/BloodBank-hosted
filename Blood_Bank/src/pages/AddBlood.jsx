@@ -2,59 +2,6 @@ import React from "react";
 import "../styles/addblood.less";
 
 function AddBlood() {
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     const user = JSON.parse(localStorage.getItem("user"));
-
-//     const formData = new FormData(e.target);
-//     const BloodGroup = formData.get("bloodGroup");
-//     const quantity = formData.get("quantity");
-//     console.log("Blood Group:", BloodGroup);
-//     console.log("Quantity:", quantity);
-//     console.log("User:", user);
-
-//     const payload = {
-//       hospital_id: user.id,
-//       hospital_name: user.username,
-//       role: user.role,
-//       blood_group: BloodGroup,
-//       quantity: quantity,
-//     };
-//     console.log("Payload:", payload);
-
-//     try {
-//         // await fetch("http://localhost/blood-bank/api/add-blood.php", {
-//         //   method: "POST",
-//         //   headers: {
-//         //     "Content-Type": "application/json",
-//         //   },
-//         //   body: JSON.stringify(payload),
-//         // });
-// const response = await fetch(
-//   "http://localhost/backend_bb/addblood.php",
-//   {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(payload),
-//   }
-// );
-
-// const text = await response.text();
-
-// console.log("Server Response:", text);
-
-// if(text.status === "true"){ {
-//   alert("Blood added successfully!");
-//   e.target.reset();
-// }
-
-//     } catch (error) {
-//       alert("Adding blood failed:", error);
-//     }
-//   };}
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -76,7 +23,7 @@ const handleSubmit = async (e) => {
     quantity: formData.get("quantity"),
   };
 
-  console.log("Payload:", payload);
+  // console.log("Payload:", payload);
 
   try {
     const response = await fetch(

@@ -7,7 +7,7 @@ function RequestBlood() {
   const location = useLocation();
 
   const user = JSON.parse(localStorage.getItem("user") || "{}");
-  console.log("User from localStorage:", user);
+  // console.log("User from localStorage:", user);
 
   const receiverId = user.id || "";
   const receiverName = user.username || "";
@@ -41,7 +41,7 @@ function RequestBlood() {
     e.preventDefault();
 
     setLoading(true);
-    console.log("form data:", formData);
+    // console.log("form data:", formData);
     try {
       const response = await axios.post(
         "http://localhost/backend_bb/requestBlood.php",
